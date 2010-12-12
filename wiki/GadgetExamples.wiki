@@ -12,6 +12,14 @@ plot(Motion)
 cat(createGoogleGadget(Motion), file="motionchart.xml")
 }}}
 
+==Geo Map==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/geomap.xml" width="600" height="350" border="0"/>
+{{{
+Geo=gvisGeoMap(Exports, locationvar="Country", numvar="Profit",
+                       options=list(height=350, dataMode='regions'))
+cat(createGoogleGadget(Geo), file="geomap.xml")
+}}}
+
 ==Geo Map Hurricane Andrew==
 <wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/andrewgeomap.xml" width="400" height="250" border="0"/>
 {{{
@@ -20,14 +28,6 @@ AndrewGeo <- gvisGeoMap(Andrew, locationvar="LatLong", numvar="Speed_kt",
       		         options=list(height=250, width=400, region="US"))
 
 cat(createGoogleGadget(AndrewGeo), file="andrewgeomap.xml")
-}}}
-
-==Geo Map==
-<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/geomap.xml" width="600" height="350" border="0"/>
-{{{
-Geo=gvisGeoMap(Exports, locationvar="Country", numvar="Profit",
-                       options=list(height=350, dataMode='regions'))
-cat(createGoogleGadget(Geo), file="geomap.xml")
 }}}
 
 ==Goolge Map Hurricane Andrew==
