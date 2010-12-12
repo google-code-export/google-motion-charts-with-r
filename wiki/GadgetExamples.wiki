@@ -1,0 +1,103 @@
+<wiki:toc max_depth="2" />
+=Introduction=
+These examples illustrate how the googleVis package can be used to create interactive charts.
+==Motion Chart==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/motionchart.xml" width="400" height="350" border="0"/>
+{{{
+library(googleVis)
+Motion=gvisMotionChart(Fruits, idvar="Fruit", timevar="Year", options=list(height=350, width=400))
+# Display chart
+plot(Motion) 
+# Create Google Gadget
+cat(createGoogleGadget(Motion), file="motionchart.xml")
+}}}
+
+==Geo Map Hurricane Andrew==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/andrewgeomap.xml" width="400" height="250" border="0"/>
+{{{
+AndrewGeo <- gvisGeoMap(Andrew, locationvar="LatLong", numvar="Speed_kt", 
+      			 hovervar="Category", 
+      		         options=list(height=250, width=400, region="US"))
+
+cat(createGoogleGadget(AndrewGeo), file="andrewgeomap.xml")
+}}}
+
+==Geo Map==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/geomap.xml" width="600" height="350" border="0"/>
+{{{
+Geo=gvisGeoMap(Exports, locationvar="Country", numvar="Profit",
+                       options=list(height=350, dataMode='regions'))
+cat(createGoogleGadget(Geo), file="geomap.xml")
+}}}
+
+==Goolge Map Hurricane Andrew==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/andrewmap.xml" width="650" height="500" border="0"/>
+{{{
+AndrewMap <- gvisMap(Andrew, "LatLong" , "Tip", 
+      	      options=list(showTip=TRUE, showLine=TRUE, enableScrollWheel=TRUE,
+		      mapType='terrain', useMapTypeControl=TRUE))
+
+cat(createGoogleGadget(AndrewMap), file="andrewmap.xml")
+}}}
+
+==Table Exports==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/table.xml" width="400" height="300" border="0"/>
+{{{
+Table <- gvisTable(Exports, options=list(width=400, height=300))
+cat(createGoogleGadget(Table), file="table.xml")
+}}}
+
+==Table Population==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/poptable.xml" width="600" height="300" border="0"/>
+{{{
+PopTable <- gvisTable(Population, options=list(width=600, height=300, page='enable'))
+cat(createGoogleGadget(PopTable), file="poptable.xml")
+}}}
+
+==Annotated Time Line==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/annotimeline.xml" width="420" height="270" border="0"/>
+{{{
+AnnoTimeLine  <- gvisAnnotatedTimeLine(Stock, datevar="Date",
+                           numvar="Value", idvar="Device",
+                           titlevar="Title", annotationvar="Annotation",
+                           options=list(displayAnnotations=TRUE,
+                             legendPosition='newRow',
+                             width=400, height=250)
+                           )
+cat(createGoogleGadget(AnnoTimeLine), file="annotimeline.xml")
+}}}
+
+==Tree Map==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/statestreemap.xml" width="400" height="300" border="0"/>
+{{{
+require(datasets)
+states <- data.frame(state.name, state.area)
+
+states3 <- data.frame(state.region, state.division, state.name, state.area)
+
+regions <- aggregate(list(region.area=states3$state.area),
+                     list(region=state.region), sum)
+
+divisions <- aggregate(list(division.area=states3$state.area),
+                     list(division=state.division, region=state.region),
+                     sum)
+
+my.states3 <- data.frame(regionid=c("USA",
+                                    as.character(regions$region),
+                                    as.character(divisions$division),
+                                    as.character(states3$state.name)),
+                         parentid=c(NA, rep("USA", 4), 
+                                   as.character(divisions$region),
+                                   as.character(states3$state.division)),
+                         state.area=c(sum(states3$state.area),
+                                      regions$region.area,
+                                      divisions$division.area,
+                                      states3$state.area))
+
+my.states3$state.area.log=log(my.states3$state.area)
+
+statesTree3 <- gvisTreeMap(my.states3, "regionid", "parentid",
+                           "state.area", "state.area.log", options=list(showScale=TRUE, width=400, height=300))
+
+cat(createGoogleGadget(statesTree3), file="statestreemap.xml")
+}}}
