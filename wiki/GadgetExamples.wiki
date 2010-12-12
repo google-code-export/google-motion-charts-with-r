@@ -17,6 +17,9 @@ cat(createGoogleGadget(Motion), file="motionchart.xml")
 {{{
 Geo=gvisGeoMap(Exports, locationvar="Country", numvar="Profit",
                        options=list(height=350, dataMode='regions'))
+# Display chart
+plot(Geo) 
+# Create Google Gadget
 cat(createGoogleGadget(Geo), file="geomap.xml")
 }}}
 
@@ -27,6 +30,9 @@ AndrewGeo <- gvisGeoMap(Andrew, locationvar="LatLong", numvar="Speed_kt",
       			 hovervar="Category", 
       		         options=list(height=250, width=400, region="US"))
 
+# Display chart
+plot(AndrewGeo) 
+# Create Google Gadget
 cat(createGoogleGadget(AndrewGeo), file="andrewgeomap.xml")
 }}}
 
@@ -36,7 +42,9 @@ cat(createGoogleGadget(AndrewGeo), file="andrewgeomap.xml")
 AndrewMap <- gvisMap(Andrew, "LatLong" , "Tip", 
       	      options=list(showTip=TRUE, showLine=TRUE, enableScrollWheel=TRUE,
 		      mapType='terrain', useMapTypeControl=TRUE))
-
+# Display chart
+plot(AndrewMap) 
+# Create Google Gadget
 cat(createGoogleGadget(AndrewMap), file="andrewmap.xml")
 }}}
 
@@ -44,6 +52,9 @@ cat(createGoogleGadget(AndrewMap), file="andrewmap.xml")
 <wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/table.xml" width="400" height="300" border="0"/>
 {{{
 Table <- gvisTable(Exports, options=list(width=400, height=300))
+# Display chart
+plot(Table) 
+# Create Google Gadget
 cat(createGoogleGadget(Table), file="table.xml")
 }}}
 
@@ -51,6 +62,9 @@ cat(createGoogleGadget(Table), file="table.xml")
 <wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/poptable.xml" width="600" height="300" border="0"/>
 {{{
 PopTable <- gvisTable(Population, options=list(width=600, height=300, page='enable'))
+# Display chart
+plot(PopTable) 
+# Create Google Gadget
 cat(createGoogleGadget(PopTable), file="poptable.xml")
 }}}
 
@@ -64,6 +78,9 @@ AnnoTimeLine  <- gvisAnnotatedTimeLine(Stock, datevar="Date",
                              legendPosition='newRow',
                              width=400, height=250)
                            )
+# Display chart
+plot(AnnoTimeLine) 
+# Create Google Gadget
 cat(createGoogleGadget(AnnoTimeLine), file="annotimeline.xml")
 }}}
 
@@ -98,6 +115,8 @@ my.states3$state.area.log=log(my.states3$state.area)
 
 statesTree3 <- gvisTreeMap(my.states3, "regionid", "parentid",
                            "state.area", "state.area.log", options=list(showScale=TRUE, width=400, height=300))
-
+# Display chart
+plot(statesTree3) 
+# Create Google Gadget
 cat(createGoogleGadget(statesTree3), file="statestreemap.xml")
 }}}
