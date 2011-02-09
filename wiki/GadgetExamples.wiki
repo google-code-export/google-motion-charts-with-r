@@ -47,7 +47,7 @@ plot(AndrewMap)
 cat(createGoogleGadget(AndrewMap), file="andrewmap.xml")
 }}}
 
-==Table Exports==
+==Table==
 <wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/table.xml" width="400" height="300" border="0"/>
 {{{
 Table <- gvisTable(Exports, options=list(width=400, height=300))
@@ -57,7 +57,6 @@ plot(Table)
 cat(createGoogleGadget(Table), file="table.xml")
 }}}
 
-==Table Population==
 <wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/poptable.xml" width="600" height="300" border="0"/>
 {{{
 PopTable <- gvisTable(Population, options=list(width=600, height=300, page='enable'))
