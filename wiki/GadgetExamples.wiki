@@ -23,7 +23,7 @@ plot(Geo)
 cat(createGoogleGadget(Geo), file="geomap.xml")
 }}}
 
-==Geo Map Hurricane Andrew==
+==Geo Map==
 <wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/andrewgeomap.xml" width="400" height="250" border="0"/>
 {{{
 AndrewGeo <- gvisGeoMap(Andrew, locationvar="LatLong", numvar="Speed_kt", 
@@ -36,7 +36,7 @@ plot(AndrewGeo)
 cat(createGoogleGadget(AndrewGeo), file="andrewgeomap.xml")
 }}}
 
-==Goolge Map Hurricane Andrew==
+==Map==
 <wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/andrewmap.xml" width="650" height="500" border="0"/>
 {{{
 AndrewMap <- gvisMap(Andrew, "LatLong" , "Tip", 
