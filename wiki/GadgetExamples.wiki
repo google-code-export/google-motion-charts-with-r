@@ -175,14 +175,14 @@ Gauge <-  gvisGauge(CityPopularity, options=list(min=0, max=800, greenFrom=500,
 cat(createGoogleGadget(Gauge), file="gauge.xml")
 }}}
 ==Intensity Map==
-<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/intensitymap.xml" width="600" height="500" border="0"/>
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/intensitymap.xml" width="600" height="300" border="0"/>
 {{{
 ## Intensity Map
 Intensity <- gvisIntensityMap(df)
 cat(createGoogleGadget(Intensity), file="intensitymap.xml")
 }}}
 ==Org Chart==
-<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/orgchart.xml" width="600" height="400" border="0"/>
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/orgchart.xml" width="700" height="500" border="0"/>
 {{{
 ## Org chart
 Org <- gvisOrgChart(Regions, options=list(width=600, height=400,
