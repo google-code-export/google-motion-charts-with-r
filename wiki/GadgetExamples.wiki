@@ -118,3 +118,16 @@ plot(statesTree3)
 # Create Google Gadget
 cat(createGoogleGadget(statesTree3), file="statestreemap.xml")
 }}}
+
+}}}
+
+==Line Chart==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/linechart.xml" border="0"/>
+{{{
+
+df=data.frame(country=c("US", "GB", "BR"), val1=c(1,3,4), val2=c(23,12,32))
+
+## Line chart
+Line <- gvisLineChart(df)
+cat(createGoogleGadget(Line), file="linechart.xml")
+}}}
