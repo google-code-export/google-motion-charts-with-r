@@ -118,16 +118,74 @@ plot(statesTree3)
 # Create Google Gadget
 cat(createGoogleGadget(statesTree3), file="statestreemap.xml")
 }}}
-
-}}}
-
 ==Line Chart==
-<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/linechart.xml" border="0"/>
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/linechart.xml" width="600" height="500" border="0"/>
 {{{
-
 df=data.frame(country=c("US", "GB", "BR"), val1=c(1,3,4), val2=c(23,12,32))
-
 ## Line chart
 Line <- gvisLineChart(df)
 cat(createGoogleGadget(Line), file="linechart.xml")
+}}}
+==Bar Chart==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/barchart.xml" width="600" height="500" border="0"/>
+{{{
+## Bar chart
+Bar <- gvisBarChart(df)
+cat(createGoogleGadget(Bar), file="barchart.xml")
+}}}
+==Column Chart==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/columnchart.xml" width="600" height="500" border="0"/>
+{{{
+## Column chart
+Column <- gvisColumnChart(df)
+cat(createGoogleGadget(Column), file="columnchart.xml")
+}}}
+==Area Chart==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/areachart.xml" width="600" height="500" border="0"/>
+{{{
+## Area chart
+Area <- gvisAreaChart(df)
+cat(createGoogleGadget(Area), file="areachart.xml")
+}}}
+==Scatter Chart==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/scatterchart.xml" width="600" height="500" border="0"/>
+{{{
+## Scatter chart
+Scatter <- gvisScatterChart(women, options=list(legend="none",
+                 lineWidth=2, pointSize=0, hAxis.title="weight",
+                 title="Women", vAxis="{title:'height'}",
+                 hAxis="{title:'weight'}")
+                 )
+cat(createGoogleGadget(Scatter), file="scatterchart.xml")
+}}}
+==Pie Chart==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/piechart.xml" width="600" height="500" border="0"/>
+{{{
+## Pie chart
+Pie <- gvisPieChart(CityPopularity)
+cat(createGoogleGadget(Pie), file="piechart.xml")
+}}}
+==Gauge==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/gauge.xml" width="600" height="500" border="0"/>
+{{{
+## Gauge
+Gauge <-  gvisGauge(CityPopularity, options=list(min=0, max=800, greenFrom=500,
+                                      greenTo=800, yellowFrom=300, yellowTo=500,
+                                      redFrom=0, redTo=300))
+cat(createGoogleGadget(Gauge), file="gauge.xml")
+}}}
+==Intensity Map==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/intensitymap.xml" width="600" height="500" border="0"/>
+{{{
+## Intensity Map
+Intensity <- gvisIntensityMap(df)
+cat(createGoogleGadget(Intensity), file="intensitymap.xml")
+}}}
+==Org Chart==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/orgchart.xml" width="600" height="400" border="0"/>
+{{{
+## Org chart
+Org <- gvisOrgChart(Regions, options=list(width=600, height=400,
+                               size='large', allowCollapse=TRUE))
+cat(createGoogleGadget(Org), file="orgchart.xml")
 }}}
