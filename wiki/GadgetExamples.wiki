@@ -1,6 +1,7 @@
 <wiki:toc max_depth="2" />
 ={{{googleVis}}} Examples=
 These examples illustrate how the googleVis package can be used to create interactive charts.
+More examples are available via demo('googleVis'). 
 ==Motion Chart==
 <wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/motionchart.xml" width="400" height="350" border="0"/>
 {{{
