@@ -17,7 +17,7 @@ cat(createGoogleGadget(Motion), file="motionchart.xml")
 <wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/geomap.xml" width="600" height="350" border="0"/>
 {{{
 Geo=gvisGeoMap(Exports, locationvar="Country", numvar="Profit",
-                       options=list(height=350, dataMode='regions'))
+                       options=list(dataMode='regions'))
 # Display chart
 plot(Geo) 
 # Create Google Gadget
@@ -51,7 +51,7 @@ cat(createGoogleGadget(AndrewMap), file="andrewmap.xml")
 ==Table==
 <wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/table.xml" width="400" height="300" border="0"/>
 {{{
-Table <- gvisTable(Exports, options=list(width=400, height=300))
+Table <- gvisTable(Exports, options=list(width=400, height=270))
 # Display chart
 plot(Table) 
 # Create Google Gadget
@@ -120,65 +120,69 @@ plot(statesTree3)
 cat(createGoogleGadget(statesTree3), file="statestreemap.xml")
 }}}
 ==Line Chart==
-<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/linechart.xml" width="600" height="500" border="0"/>
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/linechart.xml" width="300" height="200" border="0"/>
 {{{
 df=data.frame(country=c("US", "GB", "BR"), val1=c(1,3,4), val2=c(23,12,32))
 ## Line chart
-Line <- gvisLineChart(df)
+Line <- gvisLineChart(df,
+                options=list(legend='none', width=300, height=200))
 plot(Line)
 cat(createGoogleGadget(Line), file="linechart.xml")
 }}}
 ==Bar Chart==
-<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/barchart.xml" width="600" height="500" border="0"/>
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/barchart.xml" width="300" height="200" border="0"/>
 {{{
 ## Bar chart
-Bar <- gvisBarChart(df)
+Bar <- gvisBarChart(df,
+                    options=list(legend='none', width=300, height=200))
 plot(Bar)
 cat(createGoogleGadget(Bar), file="barchart.xml")
 }}}
 ==Column Chart==
-<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/columnchart.xml" width="600" height="500" border="0"/>
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/columnchart.xml" width="300" height="200" border="0"/>
 {{{
 ## Column chart
-Column <- gvisColumnChart(df)
+Column <- gvisColumnChart(df,
+                          options=list(legend='none', width=300, height=200))
 plot(Column)
 cat(createGoogleGadget(Column), file="columnchart.xml")
 }}}
 ==Area Chart==
-<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/areachart.xml" width="600" height="500" border="0"/>
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/areachart.xml" width="300" height="300" border="0"/>
 {{{
 ## Area chart
-Area <- gvisAreaChart(df)
+Column <- gvisColumnChart(df,
+                          options=list(legend='none', width=300, height=300))
 plot(Area)
 cat(createGoogleGadget(Area), file="areachart.xml")
 }}}
 ==Scatter Chart==
-<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/scatterchart.xml" width="600" height="500" border="0"/>
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/scatterchart.xml" width="300" height="300" border="0"/>
 {{{
 ## Scatter chart
 Scatter <- gvisScatterChart(women, options=list(legend="none",
                  lineWidth=2, pointSize=0, hAxis.title="weight",
                  title="Women", vAxis="{title:'height'}",
-                 hAxis="{title:'weight'}")
-                 )
+                 hAxis="{title:'weight'}", width=300, height=300))
 plot(Scatter)
 cat(createGoogleGadget(Scatter), file="scatterchart.xml")
 }}}
 ==Pie Chart==
-<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/piechart.xml" width="600" height="500" border="0"/>
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/piechart.xml" width="400" height="200" border="0"/>
 {{{
 ## Pie chart
-Pie <- gvisPieChart(CityPopularity)
+Pie <- gvisPieChart(CityPopularity,
+                    options=list(width=400, height=200))
 plot(Pie)
 cat(createGoogleGadget(Pie), file="piechart.xml")
 }}}
 ==Gauge==
-<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/gauge.xml" width="600" height="500" border="0"/>
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/gauge.xml" width="300" height="220" border="0"/>
 {{{
 ## Gauge
 Gauge <-  gvisGauge(CityPopularity, options=list(min=0, max=800, greenFrom=500,
                                       greenTo=800, yellowFrom=300, yellowTo=500,
-                                      redFrom=0, redTo=300))
+                                      redFrom=0, redTo=300, width=300, height=220))
 plot(Gauge)
 cat(createGoogleGadget(Gauge), file="gauge.xml")
 }}}
@@ -191,11 +195,23 @@ plot(Intensity)
 cat(createGoogleGadget(Intensity), file="intensitymap.xml")
 }}}
 ==Org Chart==
-<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/orgchart.xml" width="700" height="500" border="0"/>
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/orgchart.xml" width="630" height="250" border="0"/>
 {{{
 ## Org chart
-Org <- gvisOrgChart(Regions, options=list(width=600, height=400,
+Org <- gvisOrgChart(Regions, options=list(width=600, height=210,
                                size='large', allowCollapse=TRUE))
 plot(Org)
 cat(createGoogleGadget(Org), file="orgchart.xml")
+}}}
+==Candlestick Chart==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/candlestickchart.xml" width="650" height="250" border="0"/>
+{{{
+## Org chart
+Candle <- gvisCandlestickChart(OpenClose, xvar="Weekday", low="Low",
+                                      open="Open", close="Close",
+                                      high="High",
+                                      options=list(legend='none',
+                                        width=300, height=250))
+plot(Candle)
+cat(createGoogleGadget(Org), file="candlestickchart.xml")
 }}}
