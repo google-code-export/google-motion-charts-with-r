@@ -48,6 +48,17 @@ plot(AndrewMap)
 cat(createGoogleGadget(AndrewMap), file="andrewmap.xml")
 }}}
 
+==Geo Chart==
+<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/geochart.xml" width="600" height="360" border="0"/>
+{{{
+GeoChart <- gvisGeoChart(Exports, "Country", "Profit",
+                         options=list(region="150"))
+# Display chart
+plot(GeoChart)
+# Create Google Gadget
+cat(createGoogleGadget(GeoChart), file="geochart.xml")
+}}}
+
 ==Table==
 <wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/table.xml" width="400" height="300" border="0"/>
 {{{
