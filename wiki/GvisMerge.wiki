@@ -18,4 +18,4 @@ GTM <- gvisMerge(GT, M, horizontal=TRUE,
                      tableOptions="bgcolor=\"#CCCCCC\" cellspacing=10")
 plot(GTM)
 }}}
-<wiki:gadget url="https://docs.google.com/uc?id=0By35Mtg9R9_RYWRmNTIxYTYtYjIwOS00Zjk3LTljMmItYjNjNTEwZjU5NTJh&export=download&hl=en_GB" width="1000" height="600" border="0"/>
+<wiki:gadget url="https://docs.google.com/uc?id=0By35Mtg9R9_RYWRmNTIxYTYtYjIwOS00Zjk3LTljMmItYjNjNTEwZjU5NTJh&export=download&hl=en_GB" width="800" height="500" border="0"/>
