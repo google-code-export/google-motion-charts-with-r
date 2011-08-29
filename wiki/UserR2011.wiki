@@ -7,6 +7,8 @@ participants <- x[[1]]
 names(participants)=c("Name", "Country", "Organisation")
 ## Correct typo:
 participants$Country[participants$Country %in% "United Kngdom"]="United Kingdom"
+## Change USA to United States:
+levels(participants$Country)[levels(participants$Country) %in% "USA"]="United States"
 participants$Country <- factor(participants$Country)
 partCountry <- as.data.frame(xtabs( ~ Country, data=participants))
 library(googleVis)
