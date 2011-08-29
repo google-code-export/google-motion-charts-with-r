@@ -16,4 +16,4 @@ library(googleVis)
 G <- gvisGeoMap(partCountry,"Country", "Freq", options=list(gvis.editor="Edit me") )
 plot(G)
 }}}
-<wiki:gadget url="https://docs.google.com/uc?id=0By35Mtg9R9_RZWZhNzUwYzAtMWNkMi00ZmRiLWJiMmMtY2FkYWFjOWQzNTFh&export=download&hl=en_GB" width="600" height="400" border="0"/>
+<wiki:gadget url="https://docs.google.com/uc?id=0By35Mtg9R9_RZWZhNzUwYzAtMWNkMi00ZmRiLWJiMmMtY2FkYWFjOWQzNTFh&export=download&hl=en_GB" width="900" height="600" border="0"/>
