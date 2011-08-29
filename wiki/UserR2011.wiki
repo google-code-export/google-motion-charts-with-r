@@ -10,7 +10,7 @@ participants$Country[participants$Country %in% "United Kngdom"]="United Kingdom"
 participants$Country <- factor(participants$Country)
 partCountry <- as.data.frame(xtabs( ~ Country, data=participants))
 library(googleVis)
-## Please note the option gvis.editor requires {{{googleVis}}} version >= 0.2.9
+## Please note the option gvis.editor requires googleVis version >= 0.2.9
 G <- gvisGeoMap(partCountry,"Country", "Freq", options=list(gvis.editor="Edit me") )
 plot(G)
 }}}
