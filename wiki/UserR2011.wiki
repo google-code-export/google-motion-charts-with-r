@@ -1,0 +1,17 @@
+= Analysis of UseR! 2011 participants by country =
+Here is a little example how you can use the {{{googleVis}}} package to display the [http://www.warwick.ac.uk/statsdept/useR-2011/participant-list.html participants] of the [http://www.warwick.ac.uk/statsdept/useR-2011/ R user conference 2011 in Warwick] with a Geo Map (you could of course use a Geo Chart instead):
+{{{
+library(XML)
+x=readHTMLTable(readLines("http://www.warwick.ac.uk/statsdept/useR-2011/participant-list.html"))
+participants <- x[[1]]
+names(participants)=c("Name", "Country", "Organisation")
+## Correct typo:
+participants$Country[participants$Country %in% "United Kngdom"]="United Kingdom"
+participants$Country <- factor(participants$Country)
+partCountry <- as.data.frame(xtabs( ~ Country, data=participants))
+library(googleVis)
+## Please note the option gvis.editor requires {{{googleVis}}} version >= 0.2.9
+G <- gvisGeoMap(partCountry,"Country", "Freq", options=list(gvis.editor="Edit me") )
+plot(G)
+}}}
+<wiki:gadget url="https://docs.google.com/uc?id=0By35Mtg9R9_RYmEyZTQ4MTctMDExYy00YjdjLThhZGItYjM5NjRkNjA0Yzk2&export=download&hl=en_GB" width="600" height="400" border="0"/>
