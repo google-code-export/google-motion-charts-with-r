@@ -2,7 +2,8 @@
 Here is a little example how you can use the {{{googleVis}}} package to display the [http://www.warwick.ac.uk/statsdept/useR-2011/participant-list.html participants] of the [http://www.warwick.ac.uk/statsdept/useR-2011/ R user conference 2011 in Warwick] with a Geo Map (you could of course use a Geo Chart instead):
 {{{
 library(XML)
-participants=readHTMLTable(readLines("http://www.warwick.ac.uk/statsdept/useR-2011/participant-list.html"),which=1,stringsAsFactors=F)
+participants=readHTMLTable(readLines("http://www.warwick.ac.uk/statsdept/useR-2011/participant-list.html"), 
+             which=1, stringsAsFactors=F)
 names(participants)=c("Name", "Country", "Organisation")
 ## Correct typo and shortcut
 participants$Country <- gsub("Kngdom","Kingdom",participants$Country)
