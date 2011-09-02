@@ -163,7 +163,7 @@ cat(createGoogleGadget(Column), file="columnchart.xml")
 <wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/areachart.xml" width="300" height="300" border="0"/>
 {{{
 ## Area chart
-Column <- gvisColumnChart(df,
+Area <- gvisAreaChart(df,
                           options=list(legend='none', width=300, height=300))
 plot(Area)
 cat(createGoogleGadget(Area), file="areachart.xml")
