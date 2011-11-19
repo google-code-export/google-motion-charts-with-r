@@ -1,5 +1,5 @@
 = Analysis of UseR! 2011 participants by country =
-Here is a little example how you can use the {{{googleVis}}} package to display the [http://www.warwick.ac.uk/statsdept/useR-2011/participant-list.html participants] of the [http://www.warwick.ac.uk/statsdept/useR-2011/ R user conference 2011 in Warwick] with a Geo Map (you could of course use a Geo Chart instead):
+Here is a little example how you can use the {{{googleVis}}} package to display the [http://www.warwick.ac.uk/statsdept/useR-2011/participant-list.html participants] of the [http://www.warwick.ac.uk/statsdept/useR-2011/ R user conference 2011 in Warwick] with a Geo Chart (you could of course use a Geo Map instead):
 {{{
 library(XML)
 url <- "http://www.warwick.ac.uk/statsdept/useR-2011/participant-list.html"
