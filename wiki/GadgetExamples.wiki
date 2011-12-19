@@ -169,11 +169,11 @@ plot(Area)
 cat(createGoogleGadget(Area), file="areachart.xml")
 }}}
 ==Stepped Area Chart==
-<wiki:gadget url="http://dl.dropbox.com/u/7586336/googleVisExamples/Gadgets/SteppedAreGadget.xml", width="300" height="300" border="0"/>
+<wiki:gadget url="http://dl.dropbox.com/u/7586336/googleVisExamples/Gadgets/SteppedAreaGadget.xml", width="300" height="300" border="0"/>
 {{{
 ## Stepped Area Chart
 SteppedArea <- gvisSteppedAreaChart(df, xvar="country", yvar=c("val1", "val2"),
-      options=list(isStacked=TRUE))
+      options=list(isStacked=TRUE,  width=300, height=200))
 plot(SteppedArea)
 cat(createGoogleGadget(Area), file="steppedareachart.xml")
 }}}
