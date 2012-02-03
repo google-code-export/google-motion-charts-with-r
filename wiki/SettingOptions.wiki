@@ -5,7 +5,7 @@ Setting the various options of a {{{googleVis}}} objects can be a bit
 cumbersome at first. The options follow those of the Google
 Visualisation API and can be set via a named list using the argument {{{options}}}.
 In the following example we create a line chart and set various options.
-<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/options.xml" width="500" height="300" border="0"/>
+<wiki:gadget url="http://dl.dropbox.com/u/7586336/googleVisExamples/Gadgets/SettingOptions.xml" width="500" height="300" border="0"/>
 {{{
 library(googleVis)
 df <- data.frame(country=c("US", "GB", "BR"), val1=c(10,13,14), val2=c(23,12,32))
@@ -16,14 +16,13 @@ Line <-  gvisLineChart(df, xvar="country", yvar=c("val1","val2"),
                                            fontName:'Courier', 
                                            fontSize:16}",                         
                           backgroundColor="#D3D3D3",                          
-                          vAxis="{gridlineColor:'#FFFFFF'}",
-                          hAxis="{title:'Country', 
-                                  titleTextStyle:{color:'blue'}}",
-                          series="[{color:'green', targetAxisIndex: 0},
-                                         {color: 'orange',targetAxisIndex:1}]",
+                          vAxis="{gridlines:{color:'red', count:3}}",
+                          hAxis="{title:'Country', titleTextStyle:{color:'blue'}}",
+		          series="[{color:'green', targetAxisIndex: 0},	
+                                   {color: 'orange',targetAxisIndex:1}]",
                           vAxes="[{title:'val1'}, {title:'val2'}]",
                           legend="bottom",
-                          curveType='function',
+                          curveType="function",
                           width=500,
                           height=300                         
                           ))
@@ -44,4 +43,4 @@ of the browser button.
 Editor <- gvisLineChart(df, options=list(gvis.editor="Editor"))
 plot(Editor)
 }}}
-<wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/gadgets/editor.xml" width="1000" height="600" border="0"/>
+<wiki:gadget url="http://dl.dropbox.com/u/7586336/googleVisExamples/Gadgets/Editor.xml" width="1000" height="600" border="0"/>
