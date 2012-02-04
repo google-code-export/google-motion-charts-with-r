@@ -188,6 +188,17 @@ Scatter <- gvisScatterChart(women, options=list(legend="none",
 plot(Scatter)
 cat(createGoogleGadget(Scatter), file="scatterchart.xml")
 }}}
+==Bubble Chart==
+<wiki:gadget url="http://dl.dropbox.com/u/7586336/googleVisExamples/Gadgets/bubblechart.xml" width="500" height="300" border="0"/>
+{{{
+## Bubble chart
+Bubble <- gvisBubbleChart(Fruits, idvar="Fruit", xvar="Sales", yvar="Expenses",
+                           colorvar="Year", sizevar="Profit",
+                           options=list(hAxis='{minValue:75, maxValue:125}',
+                             width=500, height=300))
+
+cat(createGoogleGadget(Bubble), file="bubblechart.xml")
+}}}
 ==Pie Chart==
 <wiki:gadget url="http://google-motion-charts-with-r.googlecode.com/svn-history/r292/trunk/inst/gadgets/piechart.xml" width="400" height="200" border="0"/>
 {{{
