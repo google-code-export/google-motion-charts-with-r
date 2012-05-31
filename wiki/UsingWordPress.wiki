@@ -26,6 +26,6 @@ print(M, 'chart')
 and paste it into the value text area of a custom field in !WordPress, e.g.
 with instance name {{{Fruits}}}.  To include the motion chart into your article add
 {{{[cf]Fruits[/cf]}}} into the post, see the figure below for
-an illustration.
+an illustration. For more details see also the [http://cran.r-project.org/web/packages/googleVis/vignettes/googleVis.pdf vignette].
 
 [http://google-motion-charts-with-r.googlecode.com/svn/trunk/vignettes/CreatePost.png]
