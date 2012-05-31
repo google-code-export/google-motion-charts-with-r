@@ -28,4 +28,4 @@ with instance name {{{Fruits}}}.  To include the motion chart into your article 
 {{{[cf]Fruits[/cf]}}} into the post, see the figure below for
 an illustration.
 
-[http://google-motion-charts-with-r.googlecode.com/svn/trunk/inst/doc/CreatePost.png]
+[http://google-motion-charts-with-r.googlecode.com/svn/trunk/vignettes/CreatePost.png]
